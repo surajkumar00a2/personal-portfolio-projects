@@ -1,2 +1,47 @@
-.env
-.DStore
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# PyCharm / VSCode
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs and outputs
+*.log
+
+# Local data files
+*.csv
+*.parquet
+*.json
+*.sqlite3
+
+# AWS credentials (DO NOT COMMIT THESE!)
+.aws/
+*.pem
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Terraform / CloudFormation state (if you use IaC)
+*.tfstate
+*.tfstate.*
+.terraform/
+cloudformation-temp.json
+
+# Athena query results or other temporary exports
+athena-results/
