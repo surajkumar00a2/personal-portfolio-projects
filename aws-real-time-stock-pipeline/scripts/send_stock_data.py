@@ -6,10 +6,13 @@ from datetime import datetime
 
 ALPHA_VANTAGE_KEY = "39F2724KEJPB9DQ0"
 STOCK_SYMBOL = "IBM"
-INTERVAL = "5min"
+INTERVAL = "60min"
 
 KINESIS_STREAM_NAME = "StockDataStream"
 KINESIS_REGION_NAME = "us-east-1"
+
+# Connect to profile
+session = boto3.Session(profile_name="suraj-personal-aws")
 
 # Kinesis client
 kinesis = boto3.client("kinesis", region_name=KINESIS_REGION_NAME)

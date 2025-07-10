@@ -45,3 +45,8 @@ cloudformation-temp.json
 
 # Athena query results or other temporary exports
 athena-results/
+
+# Ignore some temp files
+temp.py
+temp1.py
+data.json
