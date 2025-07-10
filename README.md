@@ -1,1 +1,0 @@
-# aws-stock-pipeline
