@@ -26,34 +26,34 @@ df_raw = spark.readStream \
 df_raw.printSchema()
 
 # Convert to string
-df_string = df_raw.selectExpr("CAST(value AS STRING)")
+df_string = df_raw.selectExpr("CAST(data AS STRING)")
 
 # Print
-df_string.show()
+# df_string.show()
 
 # Convert to JSON
-jsonSchema = StructType([
-    StructType("symbol", StringType(), True),
-    StructType("timestamp", StringType(), True),
-    StructType("open", DoubleType(), True),
-    StructType("high", DoubleType(), True),
-    StructType("low", DoubleType(), True),
-    StructType("close", DoubleType(), True),
-    StructType("volume", IntegerType(), True)
+json_schema = StructType([
+    StructField("symbol", StringType(), True),
+    StructField("timestamp", StringType(), True),
+    StructField("open", DoubleType(), True),
+    StructField("high", DoubleType(), True),
+    StructField("low", DoubleType(), True),
+    StructField("close", DoubleType(), True),
+    StructField("volume", IntegerType(), True)
 ])
 
 # Parse JSON
-df_parsed = df_string.select(from_json(col("data"), jsonSchema).alias("record")).select("record.*")
+df_parsed = df_string.select(from_json(col("data"), json_schema).alias("record")).select("record.*")
 
 # Transform columns
-df_transformed = df_parsed.wihtColumn("event_time", to_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss"))
+df_transformed = df_parsed.withColumn("event_time", to_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss"))
 
 # Write to S3
 query = df_transformed.writeStream \
     .format("parquet") \
     .option("checkpointLocation", "s3://stock-data-pipeline-suraj/raw/stock_data/") \
     .option("path", "s3://stock-data-pipeline-suraj/processed/stock_data/") \
-    .ouptutMode("append") \
+    .outputMode("append") \
     .start()
     
 # Wait for the query to finish
