@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:13
+    env_file: 
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  airflow:
+    build: .
+    environment:
+      PYTHONPATH: /opt/airflow
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/stocks_db
+    env_file:
+      - .env
+    volumes:
+      - .:/opt/airflow
+    ports:
+      - "8080:8080"
+    command: standalone
+
+
+volumes:
+  postgres_data:
