@@ -1,0 +1,7 @@
+yfinance
+pandas
+psycopg2-binary
+apache-airflow
+beautifulsoup4
+requests
+python-dotenv
