@@ -8,13 +8,16 @@ This project is designed to be **simple, local, and portfolio-ready**, showcasin
 
 ## Architecture Overview
 
-```
+```mermaid
 flowchart LR
     A[Yahoo Finance] --> B[Stock & News Extractors]
     B --> C[Pandas Transformations]
     C --> D[Data Quality Checks]
     D --> E[PostgreSQL]
-    E --> F[Apache Airflow DAG]
+    F[Apache Airflow DAG] --> B
+    F --> C
+    F --> D
+    F --> E
 ```
 
 ## Tech Stack.
