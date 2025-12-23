@@ -1,5 +1,5 @@
 from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.operators.python import PythonOperator # type: ignore
 from datetime import datetime, timedelta
 import pandas as pd
 from src.stock_extractor import fetch_stock_prices
