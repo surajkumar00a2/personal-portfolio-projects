@@ -1,8 +1,12 @@
 import streamlit as st
 import pandas as pd
 import psycopg2
-from core.config import POSTGRES_CONFIG
+import sys
+import os
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from core.config import POSTGRES_CONFIG
 st.set_page_config(page_title="Price Tracker", layout="wide")
 
 @st.cache_data

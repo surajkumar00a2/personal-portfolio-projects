@@ -10,17 +10,22 @@ def insert_prices(records):
         return
 
     query = """
-    INSERT INTO prices (product_id, site, price, rating, availability, scraped_at, url)
+    INSERT INTO prices (product_id, site, price, availability, scraped_at, url)
     VALUES %s
     """
-
     values = [
         (
-            r["product_id"], r["site"], r["price"],
-            r["rating"], r["availability"], r["scraped_at"], r["url"]
+            r["product_id"], r["site"], r["price"], r["availability"], r["scraped_at"], r["url"]
         )
         for r in records
     ]
+    # values = [
+    #     (
+    #         r["product_id"], r["site"], r["price"],
+    #         r["rating"], r["availability"], r["scraped_at"], r["url"]
+    #     )
+    #     for r in records
+    # ]
 
     conn = get_connection()
     cur = conn.cursor()
