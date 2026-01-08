@@ -11,7 +11,7 @@ CREATE TABLE prices (
     product_id TEXT,
     site TEXT,
     price NUMERIC,
-    rating NUMERIC,
+    -- rating NUMERIC,
     availability TEXT,
     scraped_at TIMESTAMP,
     url TEXT
