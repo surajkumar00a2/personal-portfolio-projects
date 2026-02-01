@@ -1,0 +1,73 @@
+# Secrets and credentials
+config/bucket-name.txt
+config/api-key.txt
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.python-version
+.env
+
+# Lambda deployment packages
+lambda/ingestion/package/
+lambda/**/package/
+*.zip
+
+# Glue
+glue/package/
+temp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.lock
+*.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Terraform (if used later)
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# AWS SAM (if used later)
+.aws-sam/
+
+# Test coverage
+.coverage
+htmlcov/
+
+# Response files from Lambda testing
+response*.json

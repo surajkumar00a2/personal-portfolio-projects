@@ -1,0 +1,15 @@
+# Python dependencies for Weather Data Platform
+
+# API requests
+requests==2.31.0
+
+# AWS SDK
+boto3==1.34.0
+
+# Testing (for future)
+pytest==7.4.3
+moto==4.2.0
+
+# Code quality (for future)
+black==23.12.1
+flake8==6.1.0
