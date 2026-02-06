@@ -21,7 +21,7 @@ echo "Creating deployment package..."
 mkdir -p package
 cd package
 
-pip install -r ../requirements.txt -t . -q
+pip3 install -r ../requirements.txt -t . -q
 
 cp ../lambda_ingestion_v2.py .
 cp ../quality_validator.py .
@@ -38,9 +38,28 @@ echo ""
 # Check if Lambda exists
 LAMBDA_EXISTS=$(aws lambda get-function --function-name weather-ingestion 2>&1)
 
+wait_for_lambda_ready() {
+  echo "⏳ Waiting for Lambda update to complete..."
+
+  while true; do
+    STATUS=$(aws lambda get-function-configuration \
+      --function-name weather-ingestion \
+      --query 'State' \
+      --output text)
+
+    if [ "$STATUS" = "Active" ]; then
+      echo "✅ Lambda is Active"
+      break
+    fi
+
+    echo "   Current state: $STATUS — waiting..."
+    sleep 5
+  done
+}
+
 if echo "$LAMBDA_EXISTS" | grep -q "ResourceNotFoundException"; then
     echo "Creating new Lambda function..."
-    
+
     aws lambda create-function \
       --function-name weather-ingestion \
       --runtime python3.11 \
@@ -51,22 +70,25 @@ if echo "$LAMBDA_EXISTS" | grep -q "ResourceNotFoundException"; then
       --memory-size 512 \
       --environment Variables="{S3_BUCKET=$BUCKET_NAME,OPENWEATHER_API_KEY=$API_KEY}" \
       --description "Weather data ingestion with quality monitoring"
-    
+
     echo "✓ Lambda function created"
+
 else
     echo "Updating existing Lambda function..."
-    
+
     aws lambda update-function-code \
       --function-name weather-ingestion \
-      --zip-file fileb://lambda_deployment.zip -q
-    
+      --zip-file fileb://lambda_deployment.zip
+
+    wait_for_lambda_ready
+
     aws lambda update-function-configuration \
       --function-name weather-ingestion \
       --handler lambda_ingestion_v2.lambda_handler \
       --timeout 120 \
       --memory-size 512 \
-      --environment Variables="{S3_BUCKET=$BUCKET_NAME,OPENWEATHER_API_KEY=$API_KEY}" -q
-    
+      --environment Variables="{S3_BUCKET=$BUCKET_NAME,OPENWEATHER_API_KEY=$API_KEY}"
+
     echo "✓ Lambda function updated"
 fi
 
