@@ -10,7 +10,7 @@ BUCKET_NAME="weather-data-platform-$(openssl rand -hex 4)"
 echo "Bucket name: $BUCKET_NAME"
 
 # Save bucket name
-echo $BUCKET_NAME > ../config/bucket-name.txt
+echo $BUCKET_NAME > config/bucket-name.txt
 
 # Create bucket
 aws s3 mb s3://$BUCKET_NAME
