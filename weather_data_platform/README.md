@@ -37,7 +37,7 @@ EventBridge → Lambda (Validation + Quality Checks) → S3 Bronze (JSON)
                                             Athena (SQL Analytics)
 ```
 
-**Full architecture details:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+**Full architecture details:** [docs/ARCHITECTURE.md](docs/architecture.md)
 
 ---
 
