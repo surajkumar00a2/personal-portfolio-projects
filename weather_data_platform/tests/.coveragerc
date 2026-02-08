@@ -1,0 +1,5 @@
+[run]
+omit =
+    */lambda/ingestion/lambda_ingestion_v1.py
+    */tests/*
+    */glue/*
