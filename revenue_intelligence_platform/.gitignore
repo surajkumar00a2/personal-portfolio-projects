@@ -1,0 +1,29 @@
+# Environment
+.env
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Data files — never commit raw data to Git
+data/raw/
+data/processed/
+
+# dbt generated files — these are build artifacts, not source code
+revenue_intelligence/target/
+revenue_intelligence/logs/
+logs/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+uv.lock
+pyproject.toml
+
+# OS files
+.DS_Store
+Thumbs.db
