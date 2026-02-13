@@ -1,0 +1,10 @@
+# dbt generated files — never commit these
+target/
+logs/
+dbt_packages/
+
+# dbt example models — delete these entirely
+models/example/
+
+# OS
+.DS_Store

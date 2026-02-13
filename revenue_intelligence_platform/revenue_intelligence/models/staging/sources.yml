@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: online_retail
+        columns:
+          - name: InvoiceNo
+            tests: [not_null]
+      - name: telco_churn
+        columns:
+          - name: customerID
+            tests: [not_null, unique]
