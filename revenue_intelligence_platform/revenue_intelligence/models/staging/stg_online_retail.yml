@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_online_retail
+    description: "Cleaned UCI Online Retail — ERP simulation"
+    columns:
+      - name: invoice_no
+        tests: [not_null]
+      - name: transaction_type
+        tests:
+          - accepted_values:
+              values: ['SALE', 'REFUND', 'CREDIT_NOTE']
+      - name: unit_price
+        tests:
+          - not_null

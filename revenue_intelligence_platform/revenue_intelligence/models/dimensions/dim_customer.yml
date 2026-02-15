@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Customer dimension — Type 2 SCD, ERP + CRM enriched"
+    columns:
+      - name: customer_surrogate_key
+        tests: [not_null, unique]
+      - name: customer_id
+        tests: [not_null]
