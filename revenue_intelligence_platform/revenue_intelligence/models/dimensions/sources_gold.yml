@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: gold
+    schema: gold
+    description: "Pre-built gold tables created outside dbt"
+    tables:
+      - name: dim_date
+        description: "Date dimension — 5,844 rows, 2010-2025, generated via Python"
+        columns:
+          - name: date_key
+            tests: [not_null, unique]

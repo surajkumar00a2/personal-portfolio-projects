@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fact_invoice
+    description: "Core revenue fact — grain: one row per invoice line item"
+    columns:
+      - name: invoice_line_key
+        tests: [not_null, unique]
+      - name: invoice_no
+        tests: [not_null]
+      - name: transaction_type
+        tests:
+          - accepted_values:
+              values: ['SALE', 'REFUND', 'CREDIT_NOTE']
+      - name: unit_price
+        tests: [not_null]

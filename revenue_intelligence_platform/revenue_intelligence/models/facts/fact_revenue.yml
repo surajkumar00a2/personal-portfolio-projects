@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: fact_revenue
+    description: "Monthly revenue fact — grain: one row per customer per month"
+    columns:
+      - name: revenue_key
+        tests: [not_null, unique]
+      - name: customer_surrogate_key
+        tests: [not_null]
+      - name: mrr
+        tests: [not_null]
