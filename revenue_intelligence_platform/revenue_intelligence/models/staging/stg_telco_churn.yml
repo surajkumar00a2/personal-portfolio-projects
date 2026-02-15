@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_telco_churn
+    description: "Telco churn dataset — CRM simulation"
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: churn_probability
+        tests: [not_null]

@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: dim_contract
+    description: "Contract dimension — from Telco CRM simulation"
+    columns:
+      - name: contract_surrogate_key
+        tests: [not_null, unique]

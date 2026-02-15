@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: "Product dimension — median price per SKU"
+    columns:
+      - name: product_surrogate_key
+        tests: [not_null, unique]
+      - name: stock_code
+        tests: [not_null]
