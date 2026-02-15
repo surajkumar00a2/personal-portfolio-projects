@@ -35,5 +35,5 @@ models:
       +schema: silver
     dimensions:
       +schema: gold
-    marts:
+    facts:
       +schema: gold
