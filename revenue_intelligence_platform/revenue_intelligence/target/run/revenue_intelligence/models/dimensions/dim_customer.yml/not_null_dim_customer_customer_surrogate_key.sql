@@ -1,0 +1,24 @@
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_surrogate_key
+from "revenue_intelligence"."gold"."dim_customer"
+where customer_surrogate_key is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
