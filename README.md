@@ -1,106 +1,119 @@
 # 📂 Data Engineering Portfolio – Suraj Kumar
 
-Production-grade data engineering projects demonstrating **end-to-end pipelines, cloud-native architectures, orchestration, and data quality / observability engineering**.
+Production-grade data engineering projects demonstrating **end-to-end pipelines, cloud architecture, data modeling, and analytics engineering**.
 
-This repository is intentionally structured as a **portfolio monorepo**, where each project is self-contained and documented independently.
+Each project is self-contained with full documentation and reproducible setup.
 
 ---
 
 ## 📊 Featured Projects
 
-### 1. 🌦️ Weather Data Platform with Quality Monitoring (AWS)
+### 1. 💰 Enterprise Revenue Intelligence Platform
+**Tech:** PostgreSQL, dbt, Python, Looker Studio, Supabase  
+📁 **[View Project →](./revenue-intelligence-platform)** | 🔗 **[Live Dashboards →](YOUR_LOOKER_URL)**
+
+Production **revenue analytics platform** simulating Salesforce + SAP environment. Built on **541,909 real transactions** with star schema warehouse, revenue leakage detection, and executive dashboards.
+
+**Key Capabilities**
+- Star schema: 3 fact tables + 5 dimension tables with Type 2 SCD
+- Revenue leakage detection: price anomalies, AR aging, churn exposure (**£X identified**)
+- dbt transformation pipeline: 7 models, full test coverage, lineage documented
+- 3-method forecasting: rolling average, regression (R²=X.XX), churn-adjusted projection
+- 4 live Looker Studio dashboards connected to Supabase PostgreSQL
+
+**Why it stands out:** Enterprise-level data modeling with CFO-focused KPI hierarchy. Designed for business storytelling — quantifies revenue risk in £, not just rows.
+
+---
+
+### 2. 🌦️ Weather Data Platform with Quality Monitoring
 **Tech:** Python, AWS Lambda, S3, Glue, Athena, CloudWatch  
-📁 Folder: `weather_data_platform`
+📁 **[View Project →](./weather_data_platform)**
 
-A **serverless data lake** built on AWS that ingests weather data and continuously monitors **data quality, schema drift, and anomalies** at ingestion time.
-
-**Why this project stands out**
-- Goes beyond ingestion to focus on **data trust & observability**
-- Detects upstream API issues *before* dashboards break
-- Fully event-driven, cost-optimized, and production-oriented
+**Serverless data lake** on AWS with continuous **data quality monitoring** at ingestion time. Detects schema drift and anomalies before dashboards break.
 
 **Key Capabilities**
 - Bronze → Silver → Gold ETL architecture
-- Real-time data quality metrics (completeness, consistency, timeliness)
-- Schema drift detection
-- CloudWatch dashboards & alerts
-- IAM-secured, serverless design
-- ~$1.6/month AWS cost (Free Tier friendly)
+- Real-time quality metrics: completeness, consistency, timeliness
+- CloudWatch dashboards & alerting
+- Event-driven, cost-optimized (~$1.60/month)
 
-➡️ **[View Project →](./weather_data_platform)**
+**Why it stands out:** Goes beyond ingestion — focuses on **data trust & observability** in production.
 
 ---
 
-### 2. 📈 Automated Stock & News Data Pipeline
+### 3. 📈 Automated Stock & News Data Pipeline
 **Tech:** Python, Apache Airflow, PostgreSQL, Docker  
-📁 Folder: `stock_news_pipeline`
+📁 **[View Project →](./stock_news_pipeline)**
 
-Automated ETL pipeline extracting stock prices and financial news with orchestration, retries, and validation.
+Orchestrated ETL pipeline extracting daily stock prices and financial news with validation, retries, and scheduling.
 
 **Key Capabilities**
-- Daily OHLC stock price ingestion
-- Financial news scraping (BeautifulSoup)
-- Data quality checks
-- Apache Airflow orchestration
-- PostgreSQL storage with indexing
-- Dockerized local setup
-
-➡️ **[View Project →](./stock_news_pipeline)**
+- Daily OHLC stock ingestion + financial news scraping
+- Airflow DAGs with data quality checks
+- Dockerized setup with PostgreSQL persistence
 
 ---
 
-### 3. 🛒 Multi-Source E-Commerce Price Tracker
+### 4. 🛒 Multi-Source E-Commerce Price Tracker
 **Tech:** Python, Selenium, PostgreSQL, Streamlit  
-📁 Folder: `ecommerce_price_tracker`
+📁 **[View Project →](./ecommerce_price_tracker)**
 
-System for tracking product prices across multiple e-commerce platforms and analyzing historical price trends.
+System for tracking product prices across e-commerce platforms with historical trend analysis.
 
 **Key Capabilities**
-- Multi-site web scraping
+- Multi-site web scraping with Selenium
 - Scheduled price tracking
-- Historical trend analysis
-- Interactive dashboard (Streamlit)
-
-➡️ **[View Project →](./ecommerce_price_tracker)**
+- Interactive Streamlit dashboard
 
 ---
 
 ## 🛠️ Core Skill Set
 
-**Languages**
-- Python
+### Data Engineering & Modeling
+- ETL/ELT pipeline design (batch & streaming)
+- Star schema & dimensional modeling (Kimball methodology)
+- Data quality & observability frameworks
+- Type 2 SCD implementation
+- dbt transformations & testing
 
-**Data Engineering**
-- ETL pipelines, data modeling
-- Data quality & observability
-- Schema evolution handling
+### Languages & Frameworks
+- **Python** (pandas, NumPy, scipy, Airflow)
+- **SQL** (PostgreSQL, MySQL — complex queries, window functions, CTEs)
 
-**Orchestration & Processing**
-- Apache Airflow
-- Pandas, NumPy
+### Cloud & Infrastructure
+- **AWS** (Lambda, S3, Glue, Athena, CloudWatch, IAM)
+- **Supabase** (managed PostgreSQL)
+- Docker, Git
 
-**Databases**
-- PostgreSQL, MySQL
+### Analytics & Visualization
+- **Looker Studio** (live dashboards, custom SQL, blended data)
+- Streamlit
+- Data profiling & statistical analysis
 
-**Cloud & DevOps**
-- AWS (Lambda, S3, Glue, Athena, CloudWatch)
-- Docker
-- IAM & cost optimization
+### Orchestration & Automation
+- Apache Airflow (DAG design, retries, alerting)
+- Event-driven architectures
+- Scheduled pipelines
 
-**Tools**
-- Git, VS Code, Postman
+### Data Governance
+- Reconciliation logic & validation
+- Schema drift detection
+- Cost optimization
+- IAM security & access control
 
 ---
 
 ## 👤 About Me
 
 **Suraj Kumar**  
-Analytics Engineer with 3+ years of experience building **production-grade ETL pipelines, cloud automation, and large-scale data systems**.
+Analytics Engineer with **3+ years** building production ETL pipelines, cloud automation, and enterprise analytics platforms.
+
+Specialized in **data quality engineering, dimensional modeling, and business intelligence** — turning raw data into executive-ready insights.
 
 - 📧 Email: surajkumar00a2@gmail.com  
-- 💼 LinkedIn: https://linkedin.com/in/suraj-kumar-0700ba193  
-- 🌐 GitHub: https://github.com/surajkumar00a2  
+- 💼 LinkedIn: [linkedin.com/in/suraj-kumar-0700ba193](https://linkedin.com/in/suraj-kumar-0700ba193)  
+- 🌐 GitHub: [github.com/surajkumar00a2](https://github.com/surajkumar00a2)  
 
 ---
 
-⭐ If you find these projects useful, feel free to star the repository.
+⭐ **If these projects are useful, please star the repository.**
