@@ -10,18 +10,18 @@ Each project is self-contained with full documentation and reproducible setup.
 
 ### 1. 💰 Enterprise Revenue Intelligence Platform
 **Tech:** PostgreSQL, dbt, Python, Looker Studio, Supabase  
-📁 **[View Project →](./revenue-intelligence-platform)** | 🔗 **[Live Dashboards →](YOUR_LOOKER_URL)**
+📁 **[View Project →](./revenue-intelligence-platform)** | 🔗 **[Live Dashboards →](https://lookerstudio.google.com/reporting/fae2317d-afb3-4b33-a465-373323f13600)**
 
-Production **revenue analytics platform** simulating Salesforce + SAP environment. Built on **541,909 real transactions** with star schema warehouse, revenue leakage detection, and executive dashboards.
+Production **revenue analytics platform** on £10.3M of retail transactions. Identified **£442K in pricing variance (4.3% of revenue)** using statistical anomaly detection across 541,909 transactions.
 
 **Key Capabilities**
-- Star schema: 3 fact tables + 5 dimension tables with Type 2 SCD
-- Revenue leakage detection: price anomalies, AR aging, churn exposure (**£X identified**)
-- dbt transformation pipeline: 7 models, full test coverage, lineage documented
-- 3-method forecasting: rolling average, regression (R²=X.XX), churn-adjusted projection
-- 4 live Looker Studio dashboards connected to Supabase PostgreSQL
+- **Revenue leakage detection:** Z-score price anomaly detection across 33,532 flagged transactions
+- **Star schema warehouse:** 3 fact tables + 5 dimensions with Type 2 SCD (dbt + PostgreSQL)
+- **Geographic risk analysis:** Flagged 85% UK revenue concentration as critical single-market dependency
+- **MRR forecasting:** 3-method ensemble with seasonality pattern recognition
+- **Live dashboards:** 4 executive dashboards on Supabase cloud via Looker Studio
 
-**Why it stands out:** Enterprise-level data modeling with CFO-focused KPI hierarchy. Designed for business storytelling — quantifies revenue risk in £, not just rows.
+**Why it stands out:** Quantifies business risk in £ using statistical methods. Goes beyond descriptive reporting to CFO-level decision intelligence — 4.3% revenue variance identified and surfaced for action.
 
 ---
 
