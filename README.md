@@ -10,7 +10,7 @@ Each project is self-contained with full documentation and reproducible setup.
 
 ### 1. 💰 Enterprise Revenue Intelligence Platform
 **Tech:** PostgreSQL, dbt, Python, Looker Studio, Supabase  
-📁 **[View Project →](./revenue-intelligence-platform)** | 🔗 **[Live Dashboards →](https://lookerstudio.google.com/reporting/fae2317d-afb3-4b33-a465-373323f13600)**
+📁 **[View Project →](./revenue_intelligence_platform)** | 🔗 **[Live Dashboards →](https://lookerstudio.google.com/reporting/fae2317d-afb3-4b33-a465-373323f13600)**
 
 Production **revenue analytics platform** on £10.3M of retail transactions. Identified **£442K in pricing variance (4.3% of revenue)** using statistical anomaly detection across 541,909 transactions.
 
